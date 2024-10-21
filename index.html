@@ -5,8 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
+    <script>
+        document.title = "Calculator";
+    
+        function setFavicon(iconURL) {
+          let link = document.createElement('link');
+          link.rel = 'icon';
+          link.href = iconURL;
+          let oldLink = document.querySelector('link[rel="icon"]');
+          if (oldLink) {
+            document.head.removeChild(oldLink);
+          }
+          document.head.appendChild(link);
+        }
+        setFavicon('favicon.ico');
+      </script>
 <div class="calcul">
     <input type="text" id="test" placeholder="0">
     <br>
